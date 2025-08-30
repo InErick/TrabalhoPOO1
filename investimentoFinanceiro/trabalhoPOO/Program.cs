@@ -67,7 +67,14 @@ class Program
         Console.Write("\nCalculando...\n\n");
         Thread.Sleep(1000);
 
+        //Tesouro Selic, Tesouro IPCA, CDB e Poupança
 
+        Investimentos investimentos = new Investimentos(valorInicial, depositoMensal, prazoInvestimento);
+
+        Console.WriteLine("Investindo nas seguintes opções terá os seguintes resultados: \n");
+
+
+        Console.WriteLine($"-> Tesouro Selic: ");
 
 
 
