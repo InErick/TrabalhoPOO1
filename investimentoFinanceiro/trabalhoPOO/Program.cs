@@ -74,7 +74,7 @@ class Program
         Console.WriteLine("Investindo nas seguintes opções terá os seguintes resultados: \n");
 
 
-        Console.WriteLine($"-> Tesouro Selic: ");
+        Console.WriteLine($"-> Tesouro Selic: {investimentos.CalculaTesouroSelic()}");
 
 
 
