@@ -14,6 +14,7 @@ terceiro ano, a taxa de juros da aplicação sobre o montante já aplicado, supe
 
 using System;
 using System.Threading;
+using trabalhoPOO.util;
 
 class Program
 {
@@ -36,46 +37,48 @@ class Program
         Console.Write("\n- Agora, informe o valor dos depósitos mensais: R$ ");
         depositoMensal = Convert.ToDecimal(Console.ReadLine());
 
-        Console.Write("\n- Informe o periodo de tempo que deseja investir:\n1 - Anos\n2 - Meses\nOpção: ");
-        periodo = int.Parse(Console.ReadLine());
-
-    
-            
-        switch (periodo)
+        do
         {
 
-            case 1:
+            Console.Write("\n- Informe o periodo de tempo que deseja investir:\n1 - Anos\n2 - Meses\nOpção: ");
+            periodo = int.Parse(Console.ReadLine());
 
-                Console.Write("\n- Por favor Informe o prazo de investimento em anos: ");
-                prazoInvestimento = int.Parse(Console.ReadLine()) * 12;
+            switch (periodo)
+            {
 
-                break;
+                case 1:
 
-            case 2:
+                    Console.Write("\n- Por favor Informe o prazo de investimento em anos: ");
+                    prazoInvestimento = int.Parse(Console.ReadLine()) * 12;
+                    break;
 
-                Console.Write("\n- Por favor Informe o prazo de investimento em meses: ");
-                prazoInvestimento = int.Parse(Console.ReadLine());
+                case 2:
 
-                break;
+                    Console.Write("\n- Por favor Informe o prazo de investimento em meses: ");
+                    prazoInvestimento = int.Parse(Console.ReadLine());
+                    break;
 
-            default:
-                Console.WriteLine("Opção inválida, escolha uma opção disponivel!");
-                break;
+                default:
+                    Console.WriteLine("Opção inválida, escolha uma opção disponivel!");
+                    prazoInvestimento = 0;
+                    break;
 
-        };
+            };
 
-        Console.Write("\nCalculando...\n\n");
-        Thread.Sleep(1000);
+    } while (prazoInvestimento == 0);
 
-        //Tesouro Selic, Tesouro IPCA, CDB e Poupança
+    Console.Write("\nCalculando...\n\n");
+    Thread.Sleep(1000);
 
-        Investimentos investimentos = new Investimentos(valorInicial, depositoMensal, prazoInvestimento);
-
-        Console.WriteLine("Investindo nas seguintes opções terá os seguintes resultados: \n");
+    Investimentos investimentos = new Investimentos(valorInicial, depositoMensal, prazoInvestimento);
 
 
-        Console.WriteLine($"-> Tesouro Selic: {investimentos.CalculaTesouroSelic()}");
+    Console.WriteLine("Investindo nas seguintes opções terá os seguintes resultados: \n");
 
+    Console.WriteLine($"-> Tesouro Selic: {investimentos.CalcularTesouroSelic()}");
+    Console.WriteLine($"-> Tesouro IPCA: {investimentos.CalcularTesouroIPCA()}");
+    Console.WriteLine($"-> CDB: {investimentos.CalcularCDB()}");
+    Console.WriteLine($"-> Poupança: {investimentos.CalcularPoupanca()}");
 
 
 

@@ -8,26 +8,33 @@ namespace trabalhoPOO.util
 {
     public class Investimentos
     {
+        public Investimentos(decimal valorInicial, decimal depositoMensal, int prazoInvestimento)
+        {
+            this.valorInicial = valorInicial;
+            this.depositoMensal = depositoMensal;
+            this.prazoInvestimento = prazoInvestimento;
+        }
+
         public decimal valorInicial { get; }
         public decimal depositoMensal { get; }
         public int prazoInvestimento { get; }
 
-        public static decimal CalcularTesouroSelic()
+        public decimal CalcularTesouroSelic()
         {
             return 123;
         }
 
-        public static decimal CalcularTesouroIPCA()
+        public decimal CalcularTesouroIPCA()
         {
             return 123;
         }
 
-        public static decimal CalcularCDB()
+        public decimal CalcularCDB()
         {
             return 123;
         }
 
-        public static decimal CalcularPoupanca()
+        public decimal CalcularPoupanca()
         {
             return 123;
         }
