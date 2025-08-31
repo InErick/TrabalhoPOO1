@@ -18,10 +18,9 @@ using trabalhoPOO.util;
 
 class Program
 {
-
-
     static void Main(string[] args)
     {
+
         decimal valorInicial, depositoMensal;
         int periodo, prazoInvestimento;
 
@@ -31,31 +30,58 @@ class Program
         Console.Write("Olá! Seja bem vindo ao sistema de Investimento Financeiro.\n\n");
         Thread.Sleep(1000);
 
-        Console.Write("- Por favor, informe o valor inicial a ser depositado: R$ ");
-        valorInicial = Convert.ToDecimal(Console.ReadLine());
-
-        Console.Write("\n- Agora, informe o valor dos depósitos mensais: R$ ");
-        depositoMensal = Convert.ToDecimal(Console.ReadLine());
+        while(true)
+        {
+            Console.Write("- Por favor, informe o valor inicial a ser depositado: R$ ");
+            if (decimal.TryParse(Console.ReadLine(), out valorInicial))
+                break;
+            Console.WriteLine("Valor inválido. Por favor digite apenas números.\n\n");
+            //valorInicial = Convert.ToDecimal(Console.ReadLine());
+        }
+        
+        while (true)
+        {
+            Console.Write("\n- Agora, informe o valor dos depósitos mensais: R$ ");
+            if (decimal.TryParse(Console.ReadLine(), out depositoMensal))
+                break;
+            Console.WriteLine("Valor inválido. Por favor digite apenas números.\n\n");
+        }
 
         do
         {
-
-            Console.Write("\n- Informe o periodo de tempo que deseja investir:\n1 - Anos\n2 - Meses\nOpção: ");
-            periodo = int.Parse(Console.ReadLine());
+            while (true)
+            {
+                Console.Write("\n- Informe o periodo de tempo que deseja investir:\n\n1 - Anos\n2 - Meses\n\nOpção: ");
+                if (int.TryParse(Console.ReadLine(), out periodo))
+                    break;
+                Console.WriteLine("Valor inválido. Por favor digite apenas números inteiros.\n\n");
+            }
 
             switch (periodo)
             {
 
                 case 1:
 
-                    Console.Write("\n- Por favor Informe o prazo de investimento em anos: ");
-                    prazoInvestimento = int.Parse(Console.ReadLine()) * 12;
+                    while (true)
+                    {
+                        Console.Write("\n- Por favor Informe o prazo de investimento em anos: ");
+                        if(int.TryParse(Console.ReadLine(), out prazoInvestimento))
+                            prazoInvestimento *= 12;
+                        break;
+                    }
+
                     break;
 
                 case 2:
 
-                    Console.Write("\n- Por favor Informe o prazo de investimento em meses: ");
-                    prazoInvestimento = int.Parse(Console.ReadLine());
+                    while (true)
+                    {
+                        Console.Write("\n- Por favor Informe o prazo de investimento em meses: ");
+                        if(int.TryParse(Console.ReadLine(), out prazoInvestimento))
+                            break;
+                        Console.WriteLine("Valor inválido. Por favor digite apenas números inteiros.\n\n");
+                    }
+
                     break;
 
                 default:
@@ -65,20 +91,21 @@ class Program
 
             };
 
-    } while (prazoInvestimento == 0);
-
-    Console.Write("\nCalculando...\n\n");
-    Thread.Sleep(1000);
-
-    Investimentos investimentos = new Investimentos(valorInicial, depositoMensal, prazoInvestimento);
+        } while (prazoInvestimento == 0);
 
 
-    Console.WriteLine("Investindo nas seguintes opções terá os seguintes resultados: \n");
+        Console.Write("\nCalculando...\n\n");
+        Thread.Sleep(1000);
 
-    Console.WriteLine($"-> Tesouro Selic: {investimentos.CalcularTesouroSelic()}");
-    Console.WriteLine($"-> Tesouro IPCA: {investimentos.CalcularTesouroIPCA()}");
-    Console.WriteLine($"-> CDB: {investimentos.CalcularCDB()}");
-    Console.WriteLine($"-> Poupança: {investimentos.CalcularPoupanca()}");
+        Investimentos investimentos = new Investimentos(valorInicial, depositoMensal, prazoInvestimento);
+
+
+        Console.WriteLine("Investindo nas seguintes opções terá os seguintes resultados: \n");
+
+        Console.WriteLine($"-> Tesouro Selic: {investimentos.CalcularTesouroSelic()}");
+        Console.WriteLine($"-> Tesouro IPCA: {investimentos.CalcularTesouroIPCA()}");
+        Console.WriteLine($"-> CDB: {investimentos.CalcularCDB()}");
+        Console.WriteLine($"-> Poupança: {investimentos.CalcularPoupanca()}");
 
 
 
