@@ -39,24 +39,6 @@ namespace trabalhoPOO.util
             return 123;
         }
 
-        public decimal TaxaTesouroSelic()
-        {
-            return 123;
-        }
 
-        public decimal TaxaTesouroIPCA()
-        {
-            return 123;
-        }
-
-        public decimal TaxaCDB()
-        {
-            return 123;
-        }
-
-        public decimal TaxaPoupanca()
-        {
-            return 123;
-        }
     }
 }

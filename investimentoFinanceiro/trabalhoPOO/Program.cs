@@ -109,16 +109,61 @@ class Program
         Console.WriteLine($"Você investiu R$ {valorInicial} inicialmente, com depósitos mensais de R$ {depositoMensal}, por um período de {prazoInvestimento} meses.\n");
         Console.WriteLine("Investindo nas seguintes opções terá os seguintes resultados: \n");
 
-        Console.WriteLine($"-> Tesouro Selic: {investimentos.CalcularTesouroSelic():c2}\nTaxa de redimento: {investimentos.TaxaTesouroSelic()}%/ano");
+        Console.WriteLine($"1 -> Tesouro Selic: {investimentos.CalcularTesouroSelic():c2}\nTaxa de redimento: {Taxas.TesouroSelic}%/ano");
         Console.WriteLine(" ");
-        Console.WriteLine($"-> Tesouro IPCA: {investimentos.CalcularTesouroIPCA():c2}\nTaxa de redimento: {investimentos.TaxaTesouroIPCA()}%/ano");
+        Console.WriteLine($"2 -> Tesouro IPCA: {investimentos.CalcularTesouroIPCA():c2}\nTaxa de redimento: {Taxas.TesouroIPCA}%/ano");
         Console.WriteLine(" ");
-        Console.WriteLine($"-> CDB: {investimentos.CalcularCDB():c2}\nTaxa de redimento: {investimentos.TaxaCDB()}%/ano");
+        Console.WriteLine($"3 -> CDB: {investimentos.CalcularCDB():c2}\nTaxa de redimento: {Taxas.CDB}%/ano");
         Console.WriteLine(" ");
-        Console.WriteLine($"-> Poupança: {investimentos.CalcularPoupanca():c2}\nTaxa de redimento: {investimentos.TaxaPoupanca()}%/ano");
+        Console.WriteLine($"4 -> Poupança: {investimentos.CalcularPoupanca():c2}\nTaxa de redimento: {Taxas.Poupanca}%/ano");
+
+        Console.WriteLine(" ");
+        Console.WriteLine(" ");
 
 
+        int opcaoInvestimento;
+        do
+        {
+            while (true)
+            {
+                Console.Write("Quais das opcoes de investimento você gostaria de fazer? (Digite o número da opção): ");
+                if (int.TryParse(Console.ReadLine(), out opcaoInvestimento))
+                    break;
+                Console.WriteLine("Valor inválido. Por favor digite apenas números inteiros.\n");
+            }
+            switch(opcaoInvestimento)
+            {
+                case 1:
+                    Console.Clear();
+                    Console.WriteLine("- - - Tesouro Selic - - -\n");
+                    Detalhamento.TesouroSelic();
+                    investimentos.AporteMenorQueJurosTesouroSelic();
+                    break;
+                case 2:
+                    Console.Clear();
+                    Console.WriteLine("- - - Tesouro IPCA - - -\n");
+                    Detalhamento.TesouroIPCA();    
+                    investimentos.AporteMenorQueJurosTesouroIPCA();
+                    break;
+                case 3: 
+                    Console.Clear();
+                    Console.WriteLine("- - - CDB - - -\n"); 
+                    Detalhamento.CDB();
+                    investimentos.AporteMenorQueJurosCDB();
+                    break;
+                case 4: 
+                    Console.Clear();
+                    Console.WriteLine("- - - Poupança - - -\n");
+                    Detalhamento.Poupanca();
+                    investimentos.AporteMenorQueJurosPoupanca();
+                    break;
+                default:
+                    opcaoInvestimento = 0;
+                    break;
+            }
 
+
+        } while (opcaoInvestimento == 0);
 
 
     }
