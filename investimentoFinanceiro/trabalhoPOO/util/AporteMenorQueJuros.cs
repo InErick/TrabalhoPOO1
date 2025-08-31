@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace trabalhoPOO.util
 {
-    public class Detalhamento
+    public class AporteMenorQueJuros
     {
 
-        public Detalhamento(decimal valorInicial, decimal depositoMensal, int prazoInvestimento)
+        public AporteMenorQueJuros(decimal valorInicial, decimal depositoMensal, int prazoInvestimento)
         {
             this.valorInicial = valorInicial;
             this.depositoMensal = depositoMensal;
@@ -39,5 +39,7 @@ namespace trabalhoPOO.util
         {
             return 123;
         }
+
+
     }
 }
