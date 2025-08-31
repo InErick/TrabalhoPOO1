@@ -35,17 +35,19 @@ class Program
             Console.Write("- Por favor, informe o valor inicial a ser depositado: R$ ");
             if (decimal.TryParse(Console.ReadLine(), out valorInicial))
                 break;
-            Console.WriteLine("Valor inválido. Por favor digite apenas números.\n\n");
+            Console.WriteLine("Valor inválido. Por favor digite apenas números.\n");
             //valorInicial = Convert.ToDecimal(Console.ReadLine());
         }
-        
+        Console.Clear();
+
         while (true)
         {
             Console.Write("\n- Agora, informe o valor dos depósitos mensais: R$ ");
             if (decimal.TryParse(Console.ReadLine(), out depositoMensal))
                 break;
-            Console.WriteLine("Valor inválido. Por favor digite apenas números.\n\n");
+            Console.WriteLine("Valor inválido. Por favor digite apenas números.\n");
         }
+        Console.Clear();
 
         do
         {
@@ -54,7 +56,7 @@ class Program
                 Console.Write("\n- Informe o periodo de tempo que deseja investir:\n\n1 - Anos\n2 - Meses\n\nOpção: ");
                 if (int.TryParse(Console.ReadLine(), out periodo))
                     break;
-                Console.WriteLine("Valor inválido. Por favor digite apenas números inteiros.\n\n");
+                Console.WriteLine("Valor inválido. Por favor digite apenas números inteiros.\n");
             }
 
             switch (periodo)
@@ -68,6 +70,7 @@ class Program
                         if(int.TryParse(Console.ReadLine(), out prazoInvestimento))
                             prazoInvestimento *= 12;
                         break;
+                        Console.WriteLine("Valor inválido. Por favor digite apenas números inteiros.\n");
                     }
 
                     break;
@@ -79,7 +82,7 @@ class Program
                         Console.Write("\n- Por favor Informe o prazo de investimento em meses: ");
                         if(int.TryParse(Console.ReadLine(), out prazoInvestimento))
                             break;
-                        Console.WriteLine("Valor inválido. Por favor digite apenas números inteiros.\n\n");
+                        Console.WriteLine("Valor inválido. Por favor digite apenas números inteiros.\n");
                     }
 
                     break;
@@ -94,18 +97,27 @@ class Program
         } while (prazoInvestimento == 0);
 
 
-        Console.Write("\nCalculando...\n\n");
+        Console.Clear();
+        Console.Write("\nCalculando...");
         Thread.Sleep(1000);
 
         Investimentos investimentos = new Investimentos(valorInicial, depositoMensal, prazoInvestimento);
 
 
+        Console.Clear();    
+        Console.WriteLine("----- Resultados do Investimento -----\n\n");
+        Console.WriteLine($"Você investiu R$ {valorInicial} inicialmente, com depósitos mensais de R$ {depositoMensal}, por um período de {prazoInvestimento} meses.\n");
         Console.WriteLine("Investindo nas seguintes opções terá os seguintes resultados: \n");
 
-        Console.WriteLine($"-> Tesouro Selic: {investimentos.CalcularTesouroSelic()}");
-        Console.WriteLine($"-> Tesouro IPCA: {investimentos.CalcularTesouroIPCA()}");
-        Console.WriteLine($"-> CDB: {investimentos.CalcularCDB()}");
-        Console.WriteLine($"-> Poupança: {investimentos.CalcularPoupanca()}");
+        Console.WriteLine($"-> Tesouro Selic: {investimentos.CalcularTesouroSelic():c2}\nTaxa de redimento: {investimentos.TaxaTesouroSelic()}%/ano");
+        Console.WriteLine(" ");
+        Console.WriteLine($"-> Tesouro IPCA: {investimentos.CalcularTesouroIPCA():c2}\nTaxa de redimento: {investimentos.TaxaTesouroIPCA()}%/ano");
+        Console.WriteLine(" ");
+        Console.WriteLine($"-> CDB: {investimentos.CalcularCDB():c2}\nTaxa de redimento: {investimentos.TaxaCDB()}%/ano");
+        Console.WriteLine(" ");
+        Console.WriteLine($"-> Poupança: {investimentos.CalcularPoupanca():c2}\nTaxa de redimento: {investimentos.TaxaPoupanca()}%/ano");
+
+
 
 
 
