@@ -21,22 +21,37 @@ namespace trabalhoPOO.util
 
         public decimal CalcularTesouroSelic()
         {
-            return 123;
+            decimal taxaMensal = Taxas.TaxaMensal(Taxas.TesouroSelic());
+            return Calculo(taxaMensal);
         }
 
         public decimal CalcularTesouroIPCA()
         {
-            return 123;
+            decimal taxaMensal = Taxas.TaxaMensal(Taxas.TesouroSelic());
+            return Calculo(taxaMensal);
         }
 
         public decimal CalcularCDB()
         {
-            return 123;
+            decimal taxaMensal = Taxas.TaxaMensal(Taxas.TesouroSelic());
+            return Calculo(taxaMensal);
         }
 
         public decimal CalcularPoupanca()
         {
-            return 123;
+            decimal taxaMensal = Taxas.TaxaMensal(Taxas.TesouroSelic());
+            return Calculo(taxaMensal);
+        }
+
+        private decimal Calculo(decimal taxaMensal)
+        {
+            decimal saldo = valorInicial;
+            for (int mes = 0; mes <= prazoInvestimento; mes++)
+            {
+                decimal juros = saldo * taxaMensal;
+                saldo += juros + depositoMensal;
+            }
+            return saldo;
         }
 
 

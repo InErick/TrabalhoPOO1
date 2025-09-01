@@ -13,3 +13,18 @@ C:\Users\Arthur Gama\OneDrive\Documentos\GitHub\TrabalhoPOO1\investimentoFinance
 C:\Users\Arthur Gama\OneDrive\Documentos\GitHub\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\obj\Debug\net8.0\trabalhoPOO.pdb
 C:\Users\Arthur Gama\OneDrive\Documentos\GitHub\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\obj\Debug\net8.0\trabalhoPOO.genruntimeconfig.cache
 C:\Users\Arthur Gama\OneDrive\Documentos\GitHub\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\obj\Debug\net8.0\ref\trabalhoPOO.dll
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\bin\Debug\net8.0\trabalhoPOO.exe
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\bin\Debug\net8.0\trabalhoPOO.deps.json
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\bin\Debug\net8.0\trabalhoPOO.runtimeconfig.json
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\bin\Debug\net8.0\trabalhoPOO.dll
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\bin\Debug\net8.0\trabalhoPOO.pdb
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\obj\Debug\net8.0\trabalhoPOO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\obj\Debug\net8.0\trabalhoPOO.AssemblyInfoInputs.cache
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\obj\Debug\net8.0\trabalhoPOO.AssemblyInfo.cs
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\obj\Debug\net8.0\trabalhoPOO.csproj.CoreCompileInputs.cache
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\obj\Debug\net8.0\trabalhoPOO.sourcelink.json
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\obj\Debug\net8.0\trabalhoPOO.dll
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\obj\Debug\net8.0\refint\trabalhoPOO.dll
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\obj\Debug\net8.0\trabalhoPOO.pdb
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\obj\Debug\net8.0\trabalhoPOO.genruntimeconfig.cache
+C:\Users\Erick\Source\Repos\TrabalhoPOO1\investimentoFinanceiro\trabalhoPOO\obj\Debug\net8.0\ref\trabalhoPOO.dll

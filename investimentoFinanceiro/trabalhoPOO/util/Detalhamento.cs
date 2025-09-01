@@ -22,22 +22,36 @@ namespace trabalhoPOO.util
 
         public decimal TesouroSelic()
         {
-            return 123;
+            return Detalhar(Taxas.TesouroSelic());
         }
 
         public decimal TesouroIPCA()
         {
-            return 123;
+            return Detalhar(Taxas.TesouroSelic());
         }
 
         public decimal CDB()
         {
-            return 123;
+            return Detalhar(Taxas.CDB());
         }
 
         public decimal Poupanca()
         {
-            return 123;
+            return Detalhar(Taxas.Poupanca());
+        }
+
+        private decimal Detalhar(decimal taxaAnual)
+        {
+            decimal taxaMensal = Taxas.TaxaMensal(taxaAnual);
+            decimal saldo = valorInicial;
+            
+            for (int mes = 0; mes <= prazoInvestimento; mes++)
+            {
+                decimal juros = saldo * taxaMensal;
+                saldo += juros + depositoMensal;
+                Console.WriteLine($"Mês {mes}: Saldo: {saldo:C2} (Juros: {juros:C2}, Depósito Mensal: {depositoMensal:C2})");
+            }
+            return saldo;
         }
     }
 }
