@@ -69,7 +69,7 @@ class Program
                         Console.Write("\n- Por favor Informe o prazo de investimento em anos: ");
                         if(int.TryParse(Console.ReadLine(), out prazoInvestimento))
                             prazoInvestimento *= 12;
-                        break;
+                            break;
                         Console.WriteLine("Valor inválido. Por favor digite apenas números inteiros.\n");
                     }
 
@@ -169,6 +169,7 @@ class Program
         } while (opcaoInvestimento == 0);
 
         Console.WriteLine("\n\nObrigado por utilizar nosso sistema de Investimento Financeiro!");
+        Console.ReadLine();
 
     }
  

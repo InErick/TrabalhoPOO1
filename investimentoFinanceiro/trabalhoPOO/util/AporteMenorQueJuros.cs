@@ -20,26 +20,53 @@ namespace trabalhoPOO.util
         public decimal depositoMensal { get; }
         public int prazoInvestimento { get; }
 
-        public decimal TesouroSelic()
+        public void TesouroSelic()
         {
-            return 123;
+           VerificarCros(Taxas.TesouroSelic());
         }
 
-        public decimal TesouroIPCA()
+        public void TesouroIPCA()
         {
-            return 123;
+            VerificarCros(Taxas.TesouroIPCA());
         }
 
-        public decimal CDB()
+        public void CDB()
         {
-            return 123;
+            VerificarCros(Taxas.CDB());
         }
 
-        public decimal Poupanca()
+        public void Poupanca()
         {
-            return 123;
+            VerificarCros(Taxas.Poupanca());
         }
 
+        private void VerificarCros(decimal taxaAnual)
+        {
+            decimal taxaMensal = Taxas.TaxaMensal(taxaAnual);
+            decimal saldo = valorInicial;
+            int mesCrossover = 0;
 
+            for (int mes = 1; mes <= prazoInvestimento; mes++)
+            {
+                decimal juros = saldo * taxaMensal;
+
+                if (mesCrossover == 0 && juros >= depositoMensal)
+                {
+                    mesCrossover = mes; // Mes que começou o crossover
+                }
+                saldo += juros + depositoMensal;
+            }
+
+            if (mesCrossover == 0)
+            {
+                Console.WriteLine("Os aportes mensais nunca se tornaram menores que os juros obtidos.");
+            }
+            else
+            {
+                Console.WriteLine($"Os aportes mensais se tornaram menores que os juros obtidos a partir do mês {mesCrossover}.");
+            }
+
+
+        }
     }
 }

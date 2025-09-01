@@ -46,7 +46,7 @@ namespace trabalhoPOO.util
         private decimal Calculo(decimal taxaMensal)
         {
             decimal saldo = valorInicial;
-            for (int mes = 0; mes <= prazoInvestimento; mes++)
+            for (int mes = 1; mes <= prazoInvestimento; mes++)
             {
                 decimal juros = saldo * taxaMensal;
                 saldo += juros + depositoMensal;

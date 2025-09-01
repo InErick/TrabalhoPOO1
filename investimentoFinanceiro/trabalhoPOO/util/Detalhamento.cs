@@ -45,10 +45,12 @@ namespace trabalhoPOO.util
             decimal taxaMensal = Taxas.TaxaMensal(taxaAnual);
             decimal saldo = valorInicial;
             
-            for (int mes = 0; mes <= prazoInvestimento; mes++)
+            for (int mes = 1; mes <= prazoInvestimento; mes++)
             {
                 decimal juros = saldo * taxaMensal;
+                saldo += juros;
                 saldo += juros + depositoMensal;
+
                 Console.WriteLine($"Mês {mes}: Saldo: {saldo:C2} (Juros: {juros:C2}, Depósito Mensal: {depositoMensal:C2})");
             }
             return saldo;
