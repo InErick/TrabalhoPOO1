@@ -27,19 +27,19 @@ namespace trabalhoPOO.util
 
         public decimal CalcularTesouroIPCA()
         {
-            decimal taxaMensal = Taxas.TaxaMensal(Taxas.TesouroSelic());
+            decimal taxaMensal = Taxas.TaxaMensal(Taxas.TesouroIPCA());
             return Calculo(taxaMensal);
         }
 
         public decimal CalcularCDB()
         {
-            decimal taxaMensal = Taxas.TaxaMensal(Taxas.TesouroSelic());
+            decimal taxaMensal = Taxas.TaxaMensal(Taxas.CDB());
             return Calculo(taxaMensal);
         }
 
         public decimal CalcularPoupanca()
         {
-            decimal taxaMensal = Taxas.TaxaMensal(Taxas.TesouroSelic());
+            decimal taxaMensal = Taxas.TaxaMensal(Taxas.Poupanca());
             return Calculo(taxaMensal);
         }
 

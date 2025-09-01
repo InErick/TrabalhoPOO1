@@ -27,7 +27,7 @@ namespace trabalhoPOO.util
 
         public decimal TesouroIPCA()
         {
-            return Detalhar(Taxas.TesouroSelic());
+            return Detalhar(Taxas.TesouroIPCA());
         }
 
         public decimal CDB()
