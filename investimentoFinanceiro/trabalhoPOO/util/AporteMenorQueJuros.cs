@@ -52,18 +52,18 @@ namespace trabalhoPOO.util
 
                 if (mesCrossover == 0 && juros >= depositoMensal)
                 {
-                    mesCrossover = mes; // Mes que começou o crossover
+                    mesCrossover = mes;
                 }
                 saldo += juros + depositoMensal;
             }
 
             if (mesCrossover == 0)
             {
-                Console.WriteLine("Os aportes mensais nunca se tornaram menores que os juros obtidos.");
+                Console.WriteLine("\nOs aportes mensais nunca se tornaram menores que os juros obtidos.");
             }
             else
             {
-                Console.WriteLine($"Os aportes mensais se tornaram menores que os juros obtidos a partir do mês {mesCrossover}.");
+                Console.WriteLine($"\nOs aportes mensais se tornaram menores que os juros obtidos a partir do mês {mesCrossover}.");
             }
 
 

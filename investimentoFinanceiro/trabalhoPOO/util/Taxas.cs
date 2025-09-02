@@ -8,9 +8,9 @@ namespace trabalhoPOO.util
 {
     public class Taxas
     {
-        public static decimal TesouroSelic() => 10.50m;
+        public static decimal TesouroSelic() => 15.0m;
 
-        public static decimal TesouroIPCA() => 6.00m;
+        public static decimal TesouroIPCA() => 4.85m;
 
         public static decimal CDB() => 12.00m;
 
